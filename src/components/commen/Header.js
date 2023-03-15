@@ -1,12 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 
 function Header() {
+  const navigate = useNavigate()
   return (
-   <HeaderStyled height="50px">
-    TODOS-Lists
-   </HeaderStyled>
-  )
+    <HeaderStyled height="50px">
+      <div
+        onClick={()=> navigate("/")}>
+        TODOS-Lists
+      </div>
+    </HeaderStyled>
+  );
 }
 
 export default Header
@@ -21,4 +26,8 @@ const HeaderStyled = styled.header`
   top: 0;
   left: 0;
   border-bottom: 1px solid black;
+
+  div {
+    cursor: pointer;
+  }
 `
