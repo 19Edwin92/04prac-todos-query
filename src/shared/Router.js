@@ -8,6 +8,9 @@ import TDMain from "../pages/TDMain";
 import TDWrite from "../pages/TDWrite";
 
 const Router = () => {
+
+  // suspense        : isLoading 일 때, 화면을 송출할 수 있다.
+  // error boundary  : isError 일 때, 화면을 송출할 수 있다.
   const {isLoading, isError, data} = useQuery("todos", getTodos)  
 
   if(isLoading) {
@@ -31,3 +34,5 @@ const Router = () => {
 }
 
 export default Router;
+
+// 리다이렉트 : 명시된 라우러 말고, 사용자가 직접 입력했을 때 
