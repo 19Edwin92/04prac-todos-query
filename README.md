@@ -7,5 +7,6 @@
    - styled-components
    - react-router-dom
    - json-server 
+   - react-icons
 
 ##    

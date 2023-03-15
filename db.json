@@ -1,18 +1,24 @@
 {
-  "todos" : [
+  "todos": [
     {
-      "id" : 1,
-      "author":"EDWIN",
-      "title" : "리액트 배우기1",
-      "contents" : "리액트 배우기 첫시간으로...",
-      "isDone" : false
+      "id": 1,
+      "author": "EDWIN",
+      "title": "리액트 배우기1",
+      "contents": "리액트 배우기 첫시간으로...",
+      "isDone": false
     },
     {
-      "id" : 2,
-      "author":"EDWIN",
-      "title" : "리액트 배우기2",
-      "contents" : "리액트 배우기 첫시간으로...",
-      "isDone" : false
+      "id": 2,
+      "author": "바보야 ㅁ",
+      "title": "바보야 ㅁㄴㅇㄹㅁㄴㅇㄹㅁㅁㅇㄴㄹㅁㅁㅇㄴㄹㅁㅇㄴㄹㅁㅁㄴㅇ",
+      "contents": "바보야 바보야 바보야 바보야 바보야 바보야ㅁㄴㅇㄹㅁㄴㅇㄹㅁㅇㄴㄹㅁㅇㄴㄹ",
+      "isDone": false
+    },
+    {
+      "title": "ㅁㄴㅇㄹㅁㄴㅇㄹ",
+      "author": "ㅁㅇㄴㄹ",
+      "contents": "ㅁㅇㄴㄹㅁㅇㄴㄹㅁㄴㅇㄹ",
+      "id": 3
     }
   ]
 }

@@ -1,16 +1,25 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-function TDMainInner({author, text, navigates}) {
+function TDMainInner({author, text, navigates, icon, deleteHandler}) {
   const navigate = useNavigate();
   return (
-    <DivStyled 
-      onClick={()=> navigate(`/${navigates}`)}>
-      {!author && <p>{text}</p>}
-      {author && (<p>{text} <br/>{author}</p>)}
-      <p>아이콘</p>
-    </DivStyled>
+   <>
+   {!deleteHandler ? (
+    <DivStyled
+    onClick={()=> navigate(`/${navigates}`)}>
+    <p>{text}</p>
+    <p className='icon' onClick={deleteHandler}>{icon}</p>
+  </DivStyled>
+   ) : (
+    <DivStyled>
+    <div onClick={()=>navigate(`/todolists/${navigates}`)}>
+    <p>{text} <br/>{author}</p>
+    </div>
+    <p className='icon' onClick={deleteHandler}>{icon}</p>
+  </DivStyled>)}
+   </>
   )
 }
 
@@ -26,5 +35,9 @@ const DivStyled = styled.div`
   cursor: pointer;
   p {
     padding: 0 10px;
+  }
+  .icon {
+    font-size: 1.5rem;
+    color: orange;
   }
 `

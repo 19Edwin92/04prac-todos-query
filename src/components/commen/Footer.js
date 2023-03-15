@@ -19,4 +19,5 @@ const FooterDiv = styled.footer`
   line-height: ${props => props.height};
   border-top: 1px solid black;
   text-align: center;
+  background: white;
 `

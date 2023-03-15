@@ -22,6 +22,7 @@ const HeaderStyled = styled.header`
   height: ${(props) =>props.height};
   line-height: ${(props) =>props.height};
   font-size: 1.5rem;
+  background: white;
   position: sticky;
   top: 0;
   left: 0;

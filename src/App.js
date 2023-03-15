@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient()
+
 function App() {
   return (
     <>

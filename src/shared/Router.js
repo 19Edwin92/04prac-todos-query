@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { getTodos } from "../api/Api";
+import Footer from "../components/commen/Footer";
 import TDDetail from "../pages/TDDetail";
 import TDLists from "../pages/TDLists";
 import TDMain from "../pages/TDMain";
@@ -23,8 +24,8 @@ const Router = () => {
         <Route path="/todoWrite" element={<TDWrite/>} />
         <Route path="/todolists" element={<TDLists data={data}/>}/>
         <Route path="/todolists/:id" element={<TDDetail data={data}/>}/>
-
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

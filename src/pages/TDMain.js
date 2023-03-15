@@ -3,16 +3,25 @@ import styled from 'styled-components';
 import TDMainInner from '../components/commen/TDMainInner';
 import Header from '../components/commen/Header';
 import Footer from '../components/commen/Footer'
+import {BsFillArrowRightCircleFill} from 'react-icons/bs'
+
 
 function TDMain() {
 
   return (
     <>
-      <Header/>
+      <Header />
       <Article>
-          <TDMainInner text="할일 목록" navigates="todowrite"/>
-          <TDMainInner text="TODO LIST" navigates="todolists" />
-        <Footer/>
+        <TDMainInner
+          text="할일 목록"
+          navigates="todowrite"
+          icon={<BsFillArrowRightCircleFill />}
+        />
+        <TDMainInner
+          text="TODO LIST"
+          navigates="todolists"
+          icon={<BsFillArrowRightCircleFill />}
+        />
       </Article>
     </>
   );
