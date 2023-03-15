@@ -26,7 +26,7 @@ const Router = () => {
         <Route path="/" element={<TDMain data={data}/>} />
         <Route path="/todoWrite" element={<TDWrite/>} />
         <Route path="/todolists" element={<TDLists data={data}/>}/>
-        <Route path="/todolists/:id" element={<TDDetail data={data}/>}/>
+        <Route path="/todolists/:id" element={<TDDetail item={data}/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

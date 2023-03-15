@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function InputTag({title, inputValue, inputOnChnage, placeholder, maxLength}) {
+function InputTag({title, ref,inputValue, inputOnChnage, placeholder, maxLength}) {
   return (
     <>
       <h2>{title}</h2>
       <InputStyled
         required
+        ref={ref}
         type="text"
         value={inputValue}
         onChange={inputOnChnage}

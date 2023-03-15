@@ -32,6 +32,7 @@ function TDLists({data}) {
             // <div key={el.id} onClick={() => navigate(`/todolists/${el.id}`)}>
             <div key={el.id}>
             <TDMainInner
+              type="TDLists"
               text={el.title}
               author={el.author}
               icon={<RiDeleteBin2Line />}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { QueryClient, useMutation, useQueryClient } from 'react-query'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
@@ -13,6 +13,7 @@ function TDWrite() {
   const [title, titleChangeHandler, setTitle] = useInput();
   const [author, authorChangeHandler, setAuthor] = useInput();
   const [contents, contentsChangeHandler, setContents] = useInput();
+
   const navigate = useNavigate();
   
   const qureyClient = useQueryClient();

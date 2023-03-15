@@ -26,5 +26,27 @@
       "contents": "dasfafsafds",
       "id": 4
     }
+  ],
+  "comment": [
+    {
+      "id":1,
+      "todosid":4,
+      "comment":"와 잘했다1"
+    },
+    {
+      "id":2,
+      "todosid":4,
+      "comment":"와 잘했다2"
+    },
+    {
+      "id":3,
+      "todosid":4,
+      "comment":"와 잘했다3"
+    },
+    {
+      "id":4,
+      "todosid":5,
+      "comment":"와 잘했다4"
+    }
   ]
 }

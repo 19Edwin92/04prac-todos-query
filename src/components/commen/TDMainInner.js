@@ -2,26 +2,72 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-function TDMainInner({author, text, navigates, icon, deleteHandler}) {
+
+function TDMainInner({type,author,key, text, navigates, icon, deleteHandler}) {
   const navigate = useNavigate();
-  return (
-   <>
-   {!deleteHandler ? (
-    <DivStyled
-    onClick={()=> navigate(`/${navigates}`)}>
-    <p>{text}</p>
-    <p className='icon' onClick={deleteHandler}>{icon}</p>
-  </DivStyled>
-   ) : (
-    <DivStyled>
-    <div onClick={()=>navigate(`/todolists/${navigates}`)}>
-    <p>{text} <br/>{author}</p>
-    </div>
-    <p className='icon' onClick={deleteHandler}>{icon}</p>
-  </DivStyled>)}
-   </>
-  )
+  
+  switch (type) {
+    case "TDMain":
+      return (
+        <DivStyled
+            onClick={()=> navigate(`/${navigates}`)}>
+            <p>{text}</p>
+            <p className='icon' onClick={deleteHandler}>{icon}</p>
+          </DivStyled>
+      )
+    case "TDLists":
+      return (
+        <DivStyled>
+          <div onClick={() => navigate(`/todolists/${navigates}`)}>
+            <p>
+              {text} <br />
+              {author}
+            </p>
+          </div>
+          <p className="icon" onClick={deleteHandler}>
+            {icon}
+          </p>
+        </DivStyled>
+      ); 
+
+    case "TDDetail":
+      return (
+        <DivStyled>
+        <div key={key}>
+          <p>
+            {text}
+          </p>
+        </div>
+        <p className="icon">
+          {icon}
+        </p>
+      </DivStyled>
+      )
+    default:
+      return;  
+  }
 }
+
+// function TDMainInner({author, text, navigates, icon, deleteHandler}) {
+//   const navigate = useNavigate();
+//   return (
+//    <>
+//    {!deleteHandler ? (
+//     <DivStyled
+//     onClick={()=> navigate(`/${navigates}`)}>
+//     <p>{text}</p>
+//     <p className='icon' onClick={deleteHandler}>{icon}</p>
+//   </DivStyled>
+//    ) : (
+//     <DivStyled>
+//     <div onClick={()=>navigate(`/todolists/${navigates}`)}>
+//     <p>{text} <br/>{author}</p>
+//     </div>
+//     <p className='icon' onClick={deleteHandler}>{icon}</p>
+//   </DivStyled>)}
+//    </>
+//   )
+// }
 
 export default TDMainInner;
 
