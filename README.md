@@ -9,6 +9,7 @@
    - react-router-dom
    - json-server 
    - react-icons
+   - dotenv 
 
 ## 매니저님 리뷰
    - 확장성이 없다. 
