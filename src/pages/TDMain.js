@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import TDMainInner from '../components/commen/TDMainInner';
 import Header from '../components/commen/Header';
@@ -35,16 +35,6 @@ export const Article = styled.article`
   display: flex;
   flex-direction: column;
   gap: 10px;
-`
-
-const InputStyled = styled.input`
-  width: 95%;
-  height: 50px;
-  padding: 10px;
-  display: block;
-  margin: 0 auto;
-  border: 1px solid gray;
-  border-radius: 10px;
 `
 
 

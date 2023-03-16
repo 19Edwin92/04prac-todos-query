@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 
-function TDMainInner({type,author,key, text, navigates, icon, deleteHandler}) {
+function TDMainInner({type, author, text, navigates, icon, deleteHandler}) {
   const navigate = useNavigate();
   
   switch (type) {
@@ -33,7 +33,7 @@ function TDMainInner({type,author,key, text, navigates, icon, deleteHandler}) {
     case "TDDetail":
       return (
         <DivStyled>
-        <div key={key}>
+        <div>
           <p>
             {text}
           </p>

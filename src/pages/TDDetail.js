@@ -7,7 +7,7 @@ import Header from '../components/commen/Header'
 import InputTag from '../components/commen/InputTag'
 import TextareaTag from '../components/commen/TextareaTag'
 import { useInput } from '../hook/useInput'
-import { getComment, updateTodo } from '../api/Api'
+import { addComment, getComment, updateTodo } from '../api/Api'
 import TDMainInner from '../components/commen/TDMainInner'
 import {AiOutlineComment} from 'react-icons/ai'
 
@@ -37,9 +37,25 @@ function TDDetail({item}) {
 
   // comments 부분
   const{isLoading, isError, data} = useQuery("comments", getComment)
-  const [comment, commentChangeHandler, setComment] = useInput();
   const findtodosComments = data?.filter(el=> el.todosid === Number(id))
-  console.log(findtodosComments)
+
+
+  // comments 부분
+  const [comments, commentsChangeHandler, setComment] = useInput();
+  const mutationCommentadd = useMutation(addComment, {
+    onSuccess: ()=> {
+      qureyClient.invalidateQueries('comments')
+    },
+    onError:err => {
+      contents.log("댓글을 저장하지 못했습니다")
+    }
+  })
+
+  const onSubmitCommentHandler = (e) => {
+    e.preventDefault();
+    mutationCommentadd.mutate({todosid:Number(id), comment:comments})
+    setComment('')
+  } 
 
   if(isLoading) {
     return <div>로딩 중...</div>
@@ -70,20 +86,19 @@ function TDDetail({item}) {
               onClick={(e) => setEdit((pre) => !pre)}
               innerText="수정하기"
             />
-            <form>
+            <form onSubmit={onSubmitCommentHandler}>
               <InputTag
                 title="댓글입력"
-                inputValue={comment}
-                inputOnChnage={commentChangeHandler}
-                placeholder="댓글을 입력해주세요(100자 이내)"
+                inputValue={comments}
+                inputOnChnage={commentsChangeHandler}
+                placeholder="댓글을 입력하고 엔터를 입력해주세요.(100자 이내)"
                 maxLength="100"
               />
             </form>
             {findtodosComments.map((el) => (
-                <div style={{margin:"10px auto", width:"98%"}}>
+                <div key={el.id} style={{margin:"10px auto", width:"98%"}}>
                   <TDMainInner
                   type="TDDetail"
-                  key={el.id}
                   text={el.comment}
                   icon={<AiOutlineComment/>}
                 />
